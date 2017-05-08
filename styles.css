@@ -1,0 +1,15 @@
+body{
+    margin: 0;
+    background-color: #0DC6CD;
+    font-family: 'Lora', serif;
+
+
+
+}
+
+.info h1,h4{color:white;}
+.login{
+    display: inline-flex;
+    margin-left:15%;
+    margin-top: 12%;
+}
