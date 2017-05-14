@@ -1,24 +1,33 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import LoginPage from './components/loginPage.jsx';
-import {Router,Route} from 'react-router';
-import createBrowserHistory from 'history/createBrowserHistory';
-import api from './api'
+import {
+    BrowserRouter as Router,
+    Route,
+    Switch
+} from 'react-router-dom'
+import About from './components/about.jsx';
+import SessionAction from './actions/SessionAction'
 
-const newHistory = createBrowserHistory();
 
 window.handleGoogleApiLoaded = () =>{
-   // api.authorize({immediate:false});
+
+SessionAction.authorize(true,renderApp())
 
 
 }
 
-ReactDom.render(
-    <Router history= {newHistory}>
 
-        <Route path="/" component={LoginPage} />
+function renderApp() {
+    ReactDom.render(
+      <Router>
+            <Switch>
+                <Route exact path="/" component={LoginPage}  />
+                <Route  path="/about" component={About}      />
+            </Switch>
+      </Router>,
 
-    </Router>,
 
+        document.getElementById('app'));
 
-    document.getElementById('app'));
+}

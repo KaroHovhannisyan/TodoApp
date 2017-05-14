@@ -14,8 +14,11 @@ export default {
                     'cookie_policy': 'single_host_origin'
             },
                 authResult =>{
+                    if (authResult.error) {
+                        return reject(authResult.error);
+                    }
 
-                console.log(authResult);
+                    return gapi.client.load('tasks', 'v1', () => gapi.client.load('plus', 'v1', () => resolve() ) );
             }
             );
         });
