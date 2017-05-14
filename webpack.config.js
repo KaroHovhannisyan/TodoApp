@@ -9,7 +9,8 @@ module.exports = {
     },
     devServer: {
         inline:true,
-        port:8090
+        port:8090,
+        historyApiFallback: true,
     },
     module: {
         loaders: [

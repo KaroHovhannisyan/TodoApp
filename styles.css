@@ -2,9 +2,13 @@ body{
     margin: 0;
     background-color: #0DC6CD;
     font-family: 'Lora', serif;
+    text-decoration:none ;
 
 
 
+}
+.closeDrawer {
+    background-color: red;
 }
 
 .info h1,h4{color:white;}

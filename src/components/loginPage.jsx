@@ -5,7 +5,6 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import SessionAction from '../actions/SessionAction';
 import SessionStore from '../stores/SessionStore';
-import {Link} from 'react-router-dom';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
@@ -34,7 +33,7 @@ class LoginPage extends React.Component{
         if (!nextState.isLoggined) {
             return false;
         } else {
-            this.props.history.push('/about');
+            this.props.history.replace('/taskListPage');
             return true;
         }
     }
@@ -56,7 +55,7 @@ class LoginPage extends React.Component{
         this.setState(getStateFromFlux());
     }
 
-    
+
 
     render (){
 
