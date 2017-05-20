@@ -22,7 +22,7 @@ SessionAction.authorize(true,renderApp())
 function renderApp() {
     ReactDom.render(
       <Router>
-            <Switch>
+            <Switch >
                 <Route exact path="/" component={LoginPage}  />
                 <Route component={TaskListPage} path='/tasklistpage' >
 

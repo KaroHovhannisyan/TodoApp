@@ -7,6 +7,7 @@ import SessionAction from '../actions/SessionAction';
 import SessionStore from '../stores/SessionStore';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
+import './components.css'
 
 
 const style = {
@@ -33,13 +34,12 @@ class LoginPage extends React.Component{
         if (!nextState.isLoggined) {
             return false;
         } else {
-            this.props.history.replace('/taskListPage');
+           this.props.history.replace('/taskListPage');
             return true;
         }
     }
 
     componentDiDMount () {
-        console.log(this.state);
         SessionStore.addChangeListener(this._onChange);
     }
     componentWillMount () {
@@ -50,6 +50,7 @@ class LoginPage extends React.Component{
     loginButtonPressed() {
         SessionAction.authorize();
         this.setState({isLoggined:getStateFromFlux()});
+
     }
     _onChange () {
         this.setState(getStateFromFlux());
